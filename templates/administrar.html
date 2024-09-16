@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrar Registros</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Administrar Registros</h1>
-        <a href="/" class="back-link">Volver al registro</a>
+    <div class="container mt-4">
+        <h1 class="mb-4">Administrar Registros</h1>
+        <a href="/" class="btn btn-primary mb-3">Volver al registro</a>
 
-        <table>
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>DNI</th>
@@ -32,7 +34,7 @@
                     <td>{{ registro[5] }}</td> <!-- Teléfono -->
                     <td>
                         <form action="{{ url_for('eliminar_registro', dni=registro[1]) }}" method="post" style="display:inline;">
-                            <button type="submit" class="btn-delete">Eliminar</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                         </form>
                     </td>
                 </tr>
@@ -40,5 +42,10 @@
             </tbody>
         </table>
     </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
